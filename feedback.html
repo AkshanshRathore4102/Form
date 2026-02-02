@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mentor Feedback Form</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+}
+.container{
+    width:400px;
+    margin:40px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px #aaa;
+}
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+}
+button{
+    padding:8px;
+    margin-top:5px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    cursor:pointer;
+    width:100%;
+}
+.show-btn{
+    background:#2196F3;
+}
+a{
+    color:blue;
+    cursor:pointer;
+    text-decoration:underline;
+    font-size:14px;
+}
+.declaration{
+    font-size:12px;
+    margin-top:12px;
+    border-top:1px solid #ccc;
+    padding-top:8px;
+}
+</style>
+
+<script>
+function submitForm(){
+    var password = document.getElementById("password").value;
+    var correctPassword = "Abhishek@2026/PhysicsWallahMentor";
+
+    if(password !== correctPassword){
+        alert("Incorrect Password!");
+        return;
+    }
+    alert("Form Submitted Successfully!");
+}
+
+function togglePassword(){
+    var passField = document.getElementById("password");
+    if(passField.type === "password"){
+        passField.type = "text";
+    }else{
+        passField.type = "password";
+    }
+}
+
+function forgotPassword(){
+    window.open("forgot.html","_blank","width=400,height=300");
+}
+</script>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Mentor Feedback Form</h2>
+
+<label>Mentor Name</label>
+<input type="text" placeholder="Enter mentor name">
+
+<label>Company / Institution</label>
+<input type="text" placeholder="Enter company name">
+
+<label>Email</label>
+<input type="email" placeholder="Enter email">
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter password">
+
+<button class="show-btn" onclick="togglePassword()">Show / Hide Password</button>
+
+<p><a onclick="forgotPassword()">Forgot Password?</a></p>
+
+<label>Feedback</label>
+<textarea rows="4" placeholder="Enter your feedback"></textarea>
+
+<button onclick="submitForm()">Submit</button>
+
+<div class="declaration">
+<b>Declaration:</b><br>
+I hereby declare to not keep any information filled in this form.  
+<br>— FROM AKSHANSH
+</div>
+
+</div>
+
+</body>
+</html>
+
